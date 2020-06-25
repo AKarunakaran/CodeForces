@@ -1,0 +1,11 @@
+You can't have two rooks sharing the same column and then two rooks sharing the same row. This means that your total # of columns covered is < n and same w rows, so find (i, j) and that square can't be attacked.
+
+Assume all rooks are on distinct rows. Find answer, mult by 2, subtract permutations.
+
+Think about distributing edges among line of nodes. # of connected components is the same in each case, so you will have to multiply by same multinomial coeff for col orders.
+
+Perhaps count # ways of distributing k edges w dp.
+
+Obs: if we have n nodes and k edges, we KNOW there are n-k components. So this above # is equiv to distributing n distinguishable objects into n-k boxes s.t. each box gets at least one elt. Stirling numbers of second kind.
+
+So ans is {n, n-k}*(n choose n-k). Then mult by 2. Handle k = 0 case separately.
